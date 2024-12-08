@@ -18,6 +18,11 @@ Console.WriteLine($"AoC Day Two Part 1 Response: {dayTwoResponse}");
 var dayTwoPartTwoResponse = DayTwo.GetPartTwoResponse(dayTwoInput);
 Console.WriteLine($"AoC Day Two Part 2 Response: {dayTwoPartTwoResponse}");
 
+var dayThreeFile = "dayThreeInput.txt";
+var dayThreeInput = File.ReadAllLines(dayThreeFile);
+var dayThreeResponse = DayThree.GetPartOneResponse(dayThreeInput);
+Console.WriteLine($"AoC Day Three Part 1 Response: {dayThreeResponse}");
+
 Console.WriteLine();
 
 var dayOneTestFile = "dayOneTestInput.txt";
@@ -35,3 +40,8 @@ Console.WriteLine($"AoC Day Two Part 1 Test Response: {dayTwoTestResponse}");
 
 var dayTwoPartTwoTestResponse = DayTwo.GetPartTwoResponse(dayTwoTestInput);
 Console.WriteLine($"AoC Day Two Part 2 Test Response: {dayTwoPartTwoTestResponse}");
+
+var dayThreeTestFile = "dayThreeTestInput.txt";
+var dayThreeTestInput = File.ReadAllLines(dayThreeTestFile);
+var dayThreeTestResponse = DayThree.GetPartOneResponse(dayThreeTestInput);
+Console.WriteLine($"AoC Day Three Part 1 Test Response: {dayThreeTestResponse}");
