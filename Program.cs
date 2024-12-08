@@ -4,18 +4,28 @@ using AdventOfCode;
 
 var dayOneFile = "dayOneInput.txt";
 var dayOneInput = File.ReadAllLines(dayOneFile);
-var dayOneResponse = DayOnePartOne.GetResponse(dayOneInput);
-Console.WriteLine($"AoC Day One Part 1 Response: {dayOneResponse}");
+var dayOnePartOneResponse = DayOnePartOne.GetResponse(dayOneInput);
+Console.WriteLine($"AoC Day One Part 1 Response: {dayOnePartOneResponse}");
 
-var dayTwoResponse = DayOnePartTwo.GetResponse(dayOneInput);
-Console.WriteLine($"AoC Day One Part 2 Response: {dayTwoResponse}");
+var dayOnePartTwoResponse = DayOnePartTwo.GetResponse(dayOneInput);
+Console.WriteLine($"AoC Day One Part 2 Response: {dayOnePartTwoResponse}");
+
+var dayTwoFile = "dayTwoInput.txt";
+var dayTwoInput = File.ReadAllLines(dayTwoFile);
+var dayTwoResponse = DayTwo.GetResponse(dayTwoInput);
+Console.WriteLine($"AoC Day Two Response: {dayTwoResponse}");
 
 Console.WriteLine();
 
-var dayOneTestFile = "testInput.txt";
+var dayOneTestFile = "dayOneTestInput.txt";
 var dayOneTestInput = File.ReadAllLines(dayOneTestFile);
-var dayOneTestResponse = DayOnePartOne.GetResponse(dayOneTestInput);
-Console.WriteLine($"AoC Day One Part 1 Test Response: {dayOneTestResponse}");
+var dayOnePartOneTestResponse = DayOnePartOne.GetResponse(dayOneTestInput);
+Console.WriteLine($"AoC Day One Part 1 Test Response: {dayOnePartOneTestResponse}");
 
-var dayTwoTestResponse = DayOnePartTwo.GetResponse(dayOneTestInput);
-Console.WriteLine($"AoC Day One Part 2 Test Response: {dayTwoTestResponse}");
+var dayOnePartTwoTestResponse = DayOnePartTwo.GetResponse(dayOneTestInput);
+Console.WriteLine($"AoC Day One Part 2 Test Response: {dayOnePartTwoTestResponse}");
+
+var dayTwoTestFile = "dayTwoTestInput.txt";
+var dayTwoTestInput = File.ReadAllLines(dayTwoTestFile);
+var dayTwoTestResponse = DayTwo.GetResponse(dayTwoTestInput);
+Console.WriteLine($"AoC Day Two Test Response: {dayTwoTestResponse}");
