@@ -5,7 +5,12 @@ namespace AdventOfCode;
 
 public static class DayTwo
 {
-    public static int GetResponse(string[] input)
+    public static int GetPartOneResponse(string[] input)
+    {
+        return input.Select(report => report.Split(" ").Select(x => Convert.ToInt32(x)).ToArray()).Count(IsReportSafe);
+    }
+
+    public static int GetPartTwoResponse(string[] input)
     {
         var numberOfSafeReports = 0;
         
@@ -14,6 +19,10 @@ public static class DayTwo
             var numbers = report.Split(" ").Select(x => Convert.ToInt32(x)).ToArray();
 
             if (IsReportSafe(numbers))
+            {
+                numberOfSafeReports += 1;
+            }
+            else if (IsReportProblemDampenerSafe(numbers))
             {
                 numberOfSafeReports += 1;
             }
@@ -55,6 +64,28 @@ public static class DayTwo
         }
         
         return true;
+    }
+    
+    private static bool IsReportProblemDampenerSafe(int[] numbers)
+    {
+        for (var i = 0; i < numbers.Length; i++)
+        {
+            var newNumbers = CreateNewNumbersArray(numbers, i);
+
+            if (IsReportSafe(newNumbers))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private static int[] CreateNewNumbersArray(int[] numbers, int indexToRemove)
+    {
+        var listNumbers = numbers.ToList();
+        listNumbers.RemoveAt(indexToRemove);
+        return listNumbers.ToArray();
     }
 
     private static Status DefineStatus(int level)
